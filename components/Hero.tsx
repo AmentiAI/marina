@@ -1,5 +1,4 @@
 'use client';
-import { IMG } from '@/lib/images';
 import { ArrowRight, Compass } from 'lucide-react';
 import Link from 'next/link';
 
@@ -8,7 +7,7 @@ export default function Hero() {
   const title2 = 'storage & repair.'.split(' ');
 
   return (
-    <section className="relative h-[72svh] w-full overflow-hidden">
+    <section className="relative h-[72svh] w-full overflow-hidden bg-deep-900">
       <div className="absolute inset-0">
         <video
           src="/video/banner.mp4"
@@ -17,7 +16,6 @@ export default function Hero() {
           loop
           playsInline
           preload="auto"
-          poster={IMG.heroSunset}
           className="absolute inset-0 h-full w-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-deep-900/40 via-deep-900/30 to-deep-900" />
