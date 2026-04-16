@@ -1,24 +1,15 @@
 'use client';
-import { motion, useScroll, useTransform } from 'framer-motion';
-import { useRef } from 'react';
 import { IMG } from '@/lib/images';
 import { ArrowRight, Compass } from 'lucide-react';
 import Link from 'next/link';
 
 export default function Hero() {
-  const ref = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end start'] });
-  const y = useTransform(scrollYProgress, [0, 1], ['0%', '30%']);
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.15]);
-  const titleY = useTransform(scrollYProgress, [0, 1], ['0%', '-20%']);
-  const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
-
   const title = 'Full-service marina,'.split(' ');
   const title2 = 'storage & repair.'.split(' ');
 
   return (
-    <section ref={ref} className="relative h-[72svh] w-full overflow-hidden">
-      <motion.div style={{ y, scale }} className="absolute inset-0">
+    <section className="relative h-[72svh] w-full overflow-hidden">
+      <div className="absolute inset-0">
         <video
           src="/video/banner.mp4"
           autoPlay
@@ -31,10 +22,9 @@ export default function Hero() {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-deep-900/40 via-deep-900/30 to-deep-900" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_transparent_0%,_rgba(2,19,31,0.65)_90%)]" />
-      </motion.div>
+      </div>
 
-      <motion.div
-        style={{ y: titleY, opacity }}
+      <div
         className="relative z-10 mx-auto flex h-full max-w-6xl flex-col justify-start px-6 pt-28 md:px-10 md:pt-32"
       >
         <div className="mb-8 flex items-center gap-3 text-xs uppercase tracking-[0.35em] text-sand-100/70">
@@ -68,20 +58,6 @@ export default function Hero() {
             <span className="h-px w-10 bg-sand-50/50 transition-all group-hover:w-16 group-hover:bg-sand-50" />
             Sixty-four years on the south coast
           </Link>
-        </div>
-      </motion.div>
-
-      {/* scroll cue */}
-      <div
-        className="absolute inset-x-0 bottom-8 z-10 flex flex-col items-center gap-2 text-[10px] uppercase tracking-[0.4em] text-sand-50/60"
-      >
-        <span>Scroll</span>
-        <div className="relative h-10 w-px bg-sand-50/30">
-          <motion.div
-            className="absolute inset-x-0 top-0 h-4 bg-sand-50"
-            animate={{ y: [0, 24, 0] }}
-            transition={{ duration: 2.2, repeat: Infinity, ease: 'easeInOut' }}
-          />
         </div>
       </div>
     </section>
