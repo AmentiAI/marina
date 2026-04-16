@@ -1,21 +1,43 @@
 'use client';
 import { ArrowRight, Compass } from 'lucide-react';
 import Link from 'next/link';
+import { useEffect, useRef } from 'react';
 
 export default function Hero() {
   const title = 'Full-service marina,'.split(' ');
   const title2 = 'storage & repair.'.split(' ');
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const v = videoRef.current;
+    if (!v) return;
+    v.muted = true;
+    v.setAttribute('muted', '');
+    v.setAttribute('playsinline', '');
+    const tryPlay = () => v.play().catch(() => {});
+    tryPlay();
+    const onVisible = () => {
+      if (document.visibilityState === 'visible') tryPlay();
+    };
+    document.addEventListener('visibilitychange', onVisible);
+    return () => document.removeEventListener('visibilitychange', onVisible);
+  }, []);
 
   return (
     <section className="relative h-[72svh] w-full overflow-hidden bg-deep-900">
       <div className="absolute inset-0">
         <video
+          ref={videoRef}
           src="/video/banner.mp4"
           autoPlay
           muted
           loop
           playsInline
           preload="auto"
+          disableRemotePlayback
+          // @ts-expect-error iOS-specific attribute
+          webkit-playsinline="true"
+          x5-playsinline="true"
           className="absolute inset-0 h-full w-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-deep-900/40 via-deep-900/30 to-deep-900" />
