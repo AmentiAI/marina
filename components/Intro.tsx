@@ -50,7 +50,7 @@ export default function Intro() {
 
         <Reveal delay={0.2} className="md:col-span-5">
           <div className="relative aspect-[4/5] overflow-hidden rounded-sm">
-            <Image src={IMG.sailorHands} alt="Marine technician at work" fill className="object-cover" sizes="40vw" />
+            <Image src={IMG.yacht} alt="Boat in the yard" fill className="object-cover" sizes="40vw" />
             <div className="absolute inset-0 bg-gradient-to-t from-deep-900/50 to-transparent" />
             <span className="absolute bottom-5 left-5 text-[10px] uppercase tracking-[0.3em] text-sand-50/90">
               In the yard — April 2026
