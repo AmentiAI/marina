@@ -27,10 +27,7 @@ export default function Nav() {
 
   return (
     <>
-      <motion.header
-        initial={{ y: -40, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+      <header
         className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
           scrolled ? 'glass border-b border-white/5' : 'bg-transparent'
         }`}
@@ -124,7 +121,7 @@ export default function Nav() {
             <Menu className="h-5 w-5" />
           </button>
         </div>
-      </motion.header>
+      </header>
 
       <AnimatePresence>
         {open && (

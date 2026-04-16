@@ -39,31 +39,16 @@ export default function PageHero({
         <div className="absolute inset-0 bg-gradient-to-b from-deep-900/60 via-deep-900/40 to-deep-900" />
       </motion.div>
       <div className="relative z-10 mx-auto flex h-full max-w-7xl flex-col justify-start px-6 pt-32 md:px-10 md:pt-36">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2, duration: 0.9 }}
-          className="mb-6 text-xs uppercase tracking-[0.35em] text-sea-400"
-        >
+        <div className="mb-6 text-xs uppercase tracking-[0.35em] text-sea-400">
           {eyebrow}
-        </motion.div>
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.35, duration: 1, ease: [0.22, 1, 0.36, 1] }}
-          className="max-w-4xl font-display text-4xl leading-[1.05] sm:text-5xl md:text-6xl lg:text-7xl"
-        >
+        </div>
+        <h1 className="max-w-4xl font-display text-4xl leading-[1.05] sm:text-5xl md:text-6xl lg:text-7xl">
           {title}
-        </motion.h1>
+        </h1>
         {caption && (
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.6, duration: 1 }}
-            className="mt-7 max-w-2xl text-lg leading-relaxed text-sand-100/85 md:text-xl"
-          >
+          <p className="mt-7 max-w-2xl text-lg leading-relaxed text-sand-100/85 md:text-xl">
             {caption}
-          </motion.p>
+          </p>
         )}
       </div>
     </section>

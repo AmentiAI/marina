@@ -55,7 +55,7 @@ export const services: Service[] = [
     tagline: 'Ninety protected balls in the harbor — launch on VHF 68.',
     summary:
       'Inspected every April, well-sheltered from every quarter, with a launch service running 7am to 10pm in season and a dinghy dock included.',
-    img: 'fog',
+    img: 'sailboat',
     Icon: Waves,
     bullets: ['Launch on VHF 68', 'Dinghy dock included', 'Inspected each April', 'Guest moorings nightly'],
     sections: [
@@ -108,7 +108,7 @@ export const services: Service[] = [
     tagline: 'A full marine shop — nothing sublet.',
     summary:
       'Certified techs on Yamaha, Mercury, Volvo Penta, Westerbeke, and Yanmar. 35-ton travel lift and heated indoor bays.',
-    img: 'sailorHands',
+    img: 'yacht',
     Icon: Wrench,
     bullets: ['Repower & rigging', 'Electronics install', 'Fiberglass & gel coat', 'Bottom paint & detail'],
     sections: [
@@ -137,7 +137,7 @@ export const services: Service[] = [
     tagline: 'Heated indoor, covered outdoor, shrink-wrap by the foot.',
     summary:
       'Haul in October, splash by Memorial Day. We check on every boat monthly — you get a photo and a note, whether anything needed attention or not.',
-    img: 'wood',
+    img: 'heroBoats',
     Icon: Warehouse,
     bullets: ['Heated indoor', 'Covered outdoor', 'Shrink-wrap', 'Commissioning package'],
     sections: [
@@ -167,7 +167,7 @@ export const services: Service[] = [
     tagline: 'On the water before the first boat leaves the dock.',
     summary:
       'Vessel assist, harbor patrol, and in-water emergency response throughout the season — hail us on VHF 16.',
-    img: 'storm',
+    img: 'heroHarbor',
     Icon: LifeBuoy,
     bullets: ['On-water VHF 16', 'Vessel assist', 'Safety inspections', 'Weather hotline'],
     sections: [

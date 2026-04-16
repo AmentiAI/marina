@@ -43,47 +43,17 @@ export default function Hero() {
         </div>
 
         <h1 className="font-display text-4xl leading-[1.05] tracking-tight sm:text-5xl md:text-6xl lg:text-7xl max-w-4xl">
-          {title.map((w, i) => (
-            <motion.span
-              key={i}
-              initial={{ y: '110%', opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ delay: 0.15 + i * 0.08, duration: 1, ease: [0.22, 1, 0.36, 1] }}
-              className="mr-[0.2em] inline-block"
-            >
-              {w}
-            </motion.span>
-          ))}
+          {title.join(' ')}
           <br />
-          {title2.map((w, i) => (
-            <motion.span
-              key={i}
-              initial={{ y: '110%', opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ delay: 0.55 + i * 0.08, duration: 1, ease: [0.22, 1, 0.36, 1] }}
-              className="mr-[0.2em] inline-block italic text-sand-100/90"
-            >
-              {w}
-            </motion.span>
-          ))}
+          <span className="italic text-sand-100/90">{title2.join(' ')}</span>
         </h1>
 
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.1, duration: 0.9 }}
-          className="mt-7 max-w-2xl text-lg leading-relaxed text-sand-100/85 md:text-xl"
-        >
+        <p className="mt-7 max-w-2xl text-lg leading-relaxed text-sand-100/85 md:text-xl">
           A working harbor on the Rhode Island south coast. We service, repair, haul,
           and store boats of every size — trusted to do it right since 1962.
-        </motion.p>
+        </p>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.3, duration: 0.9 }}
-          className="mt-10 flex flex-col items-start gap-6 md:flex-row md:items-center"
-        >
+        <div className="mt-10 flex flex-col items-start gap-6 md:flex-row md:items-center">
           <Link
             href="/services"
             className="group inline-flex items-center gap-2 rounded-full bg-sand-50 px-6 py-3 text-sm font-medium text-deep-900 transition hover:bg-sand-100"
@@ -98,14 +68,11 @@ export default function Hero() {
             <span className="h-px w-10 bg-sand-50/50 transition-all group-hover:w-16 group-hover:bg-sand-50" />
             Sixty-four years on the south coast
           </Link>
-        </motion.div>
+        </div>
       </motion.div>
 
       {/* scroll cue */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.8 }}
+      <div
         className="absolute inset-x-0 bottom-8 z-10 flex flex-col items-center gap-2 text-[10px] uppercase tracking-[0.4em] text-sand-50/60"
       >
         <span>Scroll</span>
@@ -116,7 +83,7 @@ export default function Hero() {
             transition={{ duration: 2.2, repeat: Infinity, ease: 'easeInOut' }}
           />
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 }
